@@ -38,13 +38,13 @@ Die Zeiten sind Richtwerte. Übungen können je nach Tempo verlängert werden; T
 - **uv** als Paketmanager, dann `uv tool install crewai`
 - MCP-Unterstützung: `uv add mcp` im Projekt (oder über die requirements des Kursrepos)
 - **Git** und ein **GitHub-Account**
-- **OpenAI-API-Schlüssel** des Unternehmens (ein Schlüssel je Gerät oder ein gemeinsamer Projektschlüssel; die Übungen verbrauchen wenige hunderttausend Tokens pro Person)
+- Kein eigener API-Schlüssel nötig: den OpenAI-Schlüssel für den Kurstag stellt der Trainer
 - **VS Code** mit Python- und Jupyter-Erweiterung
 - Test: `crewai version`, dann `crewai create crew demo && cd demo && crewai run`
 
 ## LLM-Zugang
 
-Der Kurs läuft mit einem **Cloud-Modell** über die OpenAI-API (Standard `gpt-4.1`); dafür braucht jedes Gerät einen API-Schlüssel des Unternehmens in `labs/.env` (Vorlage `labs/.env.example`). Ein lokales Modell über LM Studio oder Ollama zeigt der Trainer kurz als Alternative; derselbe Code läuft dann über drei geänderte Umgebungsvariablen (`LLM_BASE_URL`, `LLM_API_KEY`, `LLM_MODEL`).
+Der Kurs läuft mit einem **Cloud-Modell** über die OpenAI-API (Standard `gpt-4.1`); den API-Schlüssel dafür bringt der Trainer mit; er wird am Kurstag in `labs/.env` eingetragen (Vorlage `labs/.env.example`) und nach dem Kurs deaktiviert. Ein lokales Modell über LM Studio oder Ollama zeigt der Trainer kurz als Alternative; derselbe Code läuft dann über drei geänderte Umgebungsvariablen (`LLM_BASE_URL`, `LLM_API_KEY`, `LLM_MODEL`).
 
 ## Material
 
