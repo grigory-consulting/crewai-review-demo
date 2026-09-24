@@ -581,7 +581,7 @@ from crewai import LLM
 
 llm = LLM(
     model=f"openai/{os.environ['LLM_MODEL']}",   # Präfix openai/ = OpenAI-kompatible API
-    base_url=os.environ["LLM_BASE_URL"],          # lokal: LM Studio oder Ollama
+    base_url=os.environ["LLM_BASE_URL"],          # Cloud-Endpunkt des Anbieters
     api_key=os.environ["LLM_API_KEY"],            # lokal: beliebiger Platzhalter
     temperature=0.2,
 )
@@ -589,10 +589,10 @@ llm = LLM(
 
 ```bash
 export CREWAI_DISABLE_TELEMETRY=true            # keine Nutzungsdaten an CrewAI
-export LLM_BASE_URL=http://localhost:1234/v1    # Cloud: URL und Key des Anbieters
+export LLM_BASE_URL=https://api.openai.com/v1   # lokal: http://localhost:1234/v1
 ```
 
-+ Ein Codepfad für alle Backends: lokales Modell oder Cloud-API unterscheiden sich nur in den drei Umgebungsvariablen <!-- .element: class="fragment" data-fragment-index="1" -->
++ Ein Codepfad für alle Backends: Cloud-API oder lokales Modell unterscheiden sich nur in den drei Umgebungsvariablen <!-- .element: class="fragment" data-fragment-index="1" -->
 + Dasselbe LLM-Objekt dient als `llm=` für Agenten, `manager_llm=` und für `@human_feedback` <!-- .element: class="fragment" data-fragment-index="2" -->
 + Telemetrie ist standardmäßig an und meldet unter anderem Rollen- und Werkzeugnamen; im Betrieb abschalten <!-- .element: class="fragment" data-fragment-index="3" -->
 
@@ -856,7 +856,7 @@ Was die Pipeline aus Teil 4 im Alltag leistet, was sie kostet, wo sie täuscht u
 ## Sicherheit und Datenschutz
 
 + **Cloud-Modell:** Diff, Findings und Prompts verlassen das Haus; Diffs enthalten oft Testdaten, Namen, Zugangsdaten <!-- .element: class="fragment" data-fragment-index="1" -->
-+ **Lokales Modell:** Standard in diesem Kurs; der Cloud-Endpunkt bleibt ein bewusster Schalter über `LLM_BASE_URL` <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Lokales Modell:** derselbe Code über `LLM_BASE_URL` auf LM Studio oder Ollama; kein Datenabfluss, dafür Hardware und Latenz <!-- .element: class="fragment" data-fragment-index="2" -->
 + **Telemetrie aus:** `CREWAI_DISABLE_TELEMETRY=true`; sonst sendet CrewAI Tool-Namen und Agentenrollen <!-- .element: class="fragment" data-fragment-index="3" -->
 + **Minimale Rechte:** Reviewer ohne Werkzeuge, Kontext-Sammler nur lesend; Token darf Inhalte lesen und Pull Requests schreiben, sonst nichts <!-- .element: class="fragment" data-fragment-index="4" -->
 + **Log der Tool-Aufrufe:** jeder MCP-Aufruf mit Argumenten und Ergebnisgröße, damit ein Review nachvollziehbar bleibt <!-- .element: class="fragment" data-fragment-index="5" -->

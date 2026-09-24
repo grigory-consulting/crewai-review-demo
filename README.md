@@ -26,7 +26,7 @@ uv pip install -r requirements.txt
 cp labs/.env.example labs/.env      # LLM_BASE_URL, LLM_API_KEY, LLM_MODEL, GITHUB_TOKEN
 ```
 
-Der Kurs läuft standardmäßig mit einem lokalen Modell über LM Studio oder Ollama (OpenAI-kompatibler Endpunkt). Ein Cloud-Modell lässt sich über die drei `LLM_*`-Variablen zuschalten.
+Der Kurs läuft gegen die OpenAI-API (`gpt-4.1`); der Schlüssel kommt in `labs/.env`. Ein lokales Modell über LM Studio oder Ollama läuft mit demselben Code, nur die drei `LLM_*`-Variablen ändern sich.
 
 ## Folien ansehen
 

@@ -40,21 +40,26 @@ class SchemaInPromptLLM(OpenAICompletion):
         raise ValueError(f"Antwort passt nach zwei Versuchen nicht zu {response_model.__name__}: {text[:300]}")
 
 
-def make_llm(temperature: float = 0.1) -> LLM:
-    """LLM aus labs/.env bzw. Umgebungsvariablen (Default: LM Studio lokal). Kein Netzzugriff beim Erzeugen.
+REASONING_PREFIXES = ("gpt-5", "o1", "o3", "o4")  # lehnen temperature != 1 ab
+
+
+def make_llm(temperature: float | None = 0.1) -> LLM:
+    """LLM aus labs/.env bzw. Umgebungsvariablen (Default: OpenAI-API, gpt-4.1). Kein Netzzugriff beim Erzeugen.
 
     LLM_SCHEMA_IN_PROMPT=1 erzwingt SchemaInPromptLLM; "auto" (Default) wählt es für DeepSeek-Endpunkte.
     """
     load_dotenv(ENV_FILE, override=True)  # labs/.env schlägt Werte, die crewai beim Import aus anderen .env-Dateien lädt
     os.environ.setdefault("CREWAI_DISABLE_TELEMETRY", "true")
     os.environ.setdefault("OTEL_SDK_DISABLED", "true")
-    model = os.environ.get("LLM_MODEL", "qwen/qwen3.6-35b-a3b")
-    base_url = os.environ.get("LLM_BASE_URL", "http://localhost:1234/v1")
-    api_key = os.environ.get("LLM_API_KEY", "lm-studio")
+    model = os.environ.get("LLM_MODEL", "gpt-4.1")
+    base_url = os.environ.get("LLM_BASE_URL", "https://api.openai.com/v1")
+    api_key = os.environ.get("LLM_API_KEY", "")
+    if model.startswith(REASONING_PREFIXES):
+        temperature = None  # Reasoning-Modelle akzeptieren nur den Standardwert
     modus = os.environ.get("LLM_SCHEMA_IN_PROMPT", "auto")
     if modus == "1" or (modus == "auto" and "deepseek" in base_url):
-        return SchemaInPromptLLM(model=model, base_url=base_url, api_key=api_key, temperature=temperature)
-    return LLM(model=f"openai/{model}", base_url=base_url, api_key=api_key, temperature=temperature)
+        return SchemaInPromptLLM(model=model, base_url=base_url, api_key=api_key, **({"temperature": temperature} if temperature is not None else {}))
+    return LLM(model=f"openai/{model}", base_url=base_url, api_key=api_key, **({"temperature": temperature} if temperature is not None else {}))
 
 
 # focus -> (role, goal, backstory). Kurz und präzise: lange Backstories bringen bei Reviews nichts.
