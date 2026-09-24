@@ -3,6 +3,8 @@ __pycache__/
 .ipynb_checkpoints/
 .env
 labs/demo-repo-local/
+# wird in Lab 2, Aufgabe 2 vom Notebook erzeugt
+labs/mcp_git_server_ext.py
 labs/output/
 *.pyc
 .DS_Store

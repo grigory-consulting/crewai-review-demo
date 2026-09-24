@@ -9,8 +9,9 @@ Kursmaterial zur eintägigen Fortbildung: Architektur von KI-Agenten, Tool-Calli
 | `agenda.md` | Zeitplan, Voraussetzungen, LLM-Zugang |
 | `slides/ki-agenten.md` | Folien (Obsidian Slides Extended, Design in `slides/ki-agenten.css`) |
 | `slides/figs/` | Diagramme aus den Folien (PNG, SVG) |
-| `labs/` | Notebooks zu den Übungsblöcken, MCP-Server, Review-Pipeline (folgt) |
-| `LABS.md` | Übungsübersicht (folgt) |
+| `labs/` | Notebooks zu den Übungsblöcken (`*_student.ipynb` ohne Lösungen), MCP-Server `mcp_git_server.py`, Paket `review_pipeline/`, `make_demo_repo.py` für das lokale Übungsrepository |
+| `LABS.md` | Übungsübersicht |
+| `demo/` | Übungsprojekt (Warenkorb); die Pull Requests dieses Repos sind die Eingaben für die Review-Pipeline |
 | `requirements.txt`, `pyproject.toml` | Python-Umgebung |
 
 ## Einrichtung
