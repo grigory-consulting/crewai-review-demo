@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>MCP: Host, Client, Server</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #f4f7fb; }
+  svg { display: block; width: 1200px; height: 400px; }
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="d_t2_mcp_architektur-title d_t2_mcp_architektur-desc">
+  <title id="d_t2_mcp_architektur-title">MCP: Host, Client, Server</title>
+  <desc id="d_t2_mcp_architektur-desc">Die CrewAI-Anwendung ist der Host; ihr MCP-Client spricht per JSON-RPC über stdio mit einem lokalen Git-Server und über HTTP mit dem GitHub-MCP-Server; beide Server bieten Tools, Resources und Prompts.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5a6b82"/></marker>
+    <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2459a6"/></marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#f4f7fb"/>
+  <rect x="40" y="48" width="440" height="320" rx="8" fill="rgba(24,59,102,0.02)" stroke="rgba(24,59,102,0.10)" stroke-width="0.8"/>
+  <rect x="56" y="52" width="192" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="64" y="64" font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.14em" fill="rgba(24,59,102,0.55)">HOST: CREWAI-ANWENDUNG</text>
+  <rect x="600" y="48" width="560" height="320" rx="8" fill="rgba(24,59,102,0.02)" stroke="rgba(24,59,102,0.10)" stroke-width="0.8"/>
+  <rect x="616" y="52" width="96" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="624" y="64" font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.14em" fill="rgba(24,59,102,0.55)">MCP-SERVER</text>
+  <line x1="260" y1="168" x2="260" y2="240" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <rect x="276" y="194" width="117" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="276" y="206" font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.06em" fill="#5a6b82" text-anchor="start">WERKZEUGAUFRUF</text>
+  <path d="M440,256 H532 Q540,256 540,248 V136 Q540,128 548,128 H640" fill="none" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <rect x="396" y="166" width="132" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="528" y="178" font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.06em" fill="#5a6b82" text-anchor="end">JSON-RPC · STDIO</text>
+  <path d="M440,288 H560 Q568,288 568,280 V280 Q568,272 576,272 H640" fill="none" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <rect x="448" y="294" width="124.5" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="510" y="306" font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.06em" fill="#5a6b82" text-anchor="middle">JSON-RPC · HTTP</text>
+  <line x1="880" y1="128" x2="920" y2="128" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="880" y1="272" x2="920" y2="272" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <rect x="80" y="104" width="360" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="80" y="104" width="360" height="64" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="260" y="132" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Agent</text>
+  <text x="260" y="154" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Rolle, Ziel, erlaubte Werkzeuge</text>
+  <rect x="80" y="240" width="360" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="80" y="240" width="360" height="64" rx="6" fill="rgba(36,89,166,0.08)" stroke="#2459a6" stroke-width="1"/>
+  <text x="260" y="268" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">MCP-Client</text>
+  <text x="260" y="290" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">eine Verbindung je Server, Tool-Filter</text>
+  <rect x="640" y="88" width="240" height="80" rx="6" fill="#f4f7fb"/>
+  <rect x="640" y="88" width="240" height="80" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="760" y="124" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Git-Server (eigener)</text>
+  <text x="760" y="146" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">stdio · lokaler Prozess</text>
+  <rect x="640" y="232" width="240" height="80" rx="6" fill="#f4f7fb"/>
+  <rect x="640" y="232" width="240" height="80" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="760" y="268" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">GitHub MCP Server</text>
+  <text x="760" y="290" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Streamable HTTP · entfernt</text>
+  <rect x="920" y="104" width="200" height="48" rx="6" fill="#f4f7fb"/>
+  <rect x="920" y="104" width="200" height="48" rx="6" fill="rgba(24,59,102,0.05)" stroke="#5a6b82" stroke-width="1"/>
+  <text x="1020" y="135" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Git-Repository</text>
+  <rect x="920" y="248" width="200" height="48" rx="6" fill="#f4f7fb"/>
+  <rect x="920" y="248" width="200" height="48" rx="6" fill="rgba(24,59,102,0.03)" stroke="rgba(24,59,102,0.30)" stroke-width="1"/>
+  <text x="1020" y="279" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">GitHub API</text>
+  <text x="880" y="348" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Jeder Server bietet: TOOLS · RESOURCES · PROMPTS</text>
+</svg>
+</body>
+</html>

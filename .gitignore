@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.env
+labs/demo-repo-local/
+labs/output/
+*.pyc
+.DS_Store
+# Trainerfassung mit Speaker-Notes bleibt lokal
+slides/*_trainer.md

@@ -1,0 +1,348 @@
+/* KI-Agenten/CrewAI-Deck für Obsidian Slides Extended. Basis: gfu-obsidian.css des C++-Decks
+   (aus custom-light.scss übertragen), Ergänzungen am Dateiende.
+   Layout-Korrekturen für den Plugin-Wrapper wie in qskills-obsidian.css. */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap');
+
+:root {
+  --gf-text: #1e293b;
+  --gf-heading: #0f172a;
+  --gf-blue: #2563eb;
+  --gf-blue-dark: #1e40af;
+  --gf-code: #1d4ed8;
+  --gf-violet: #7c3aed;
+  --gf-muted: #64748b;
+  --gf-light: #94a3b8;
+  --gf-bg-soft: #f1f5f9;
+  --gf-bg-code: #f8fafc;
+  --gf-border: #e2e8f0;
+}
+
+.reveal {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 34px;
+  line-height: 1.4;
+  color: var(--gf-text);
+}
+
+.reveal a { color: var(--gf-blue); }
+
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: inherit;
+  color: var(--gf-heading);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.reveal h1 { font-size: 1.8em; }
+.reveal h2 { font-size: 1.3em; }
+.reveal h3 { font-size: 1.05em; text-align: left; }
+
+/* Blaue Linie unter Folientiteln */
+.reveal .slides section h2 {
+  text-align: left;
+  border-bottom: 3px solid var(--gf-blue);
+  padding-bottom: 0.25em;
+  margin-bottom: 0.6em;
+}
+
+/* Titelfolie: Verlauf im Titel wie im Quarto-Deck */
+.reveal .slides section.titleslide h1 {
+  font-size: 2.4em;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1d4ed8, #7c3aed, #db2777);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.15em;
+}
+
+.reveal .slides section.titleslide h3 {
+  font-size: 1.1em;
+  color: var(--gf-muted);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.reveal .slides section.titleslide p {
+  font-size: 0.9em;
+  color: var(--gf-light);
+  margin-top: 1.5em;
+}
+
+/* Dunkle Abschnittsfolien */
+.reveal .slides section[data-background-color] h1,
+.reveal .slides section[data-background-color] h2,
+.reveal .slides section[data-background-color] p {
+  color: #f1f5f9;
+  border: none;
+  text-align: center;
+}
+
+.reveal .slides section[data-background-color] h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  text-shadow: 0 2px 20px rgba(37, 99, 235, 0.4);
+}
+
+.reveal .slides section[data-background-color] p {
+  color: #cbd5e1;
+  font-size: 0.85em;
+}
+
+.reveal .slides section[data-background-color] code {
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Folien mit viel Inhalt */
+.reveal .slides section.smaller { font-size: 0.75em; }
+.reveal .slides section.smaller h1,
+.reveal .slides section.smaller h2,
+.reveal .slides section.smaller h3 { font-size: inherit; }
+.reveal .slides section.smaller h2 { font-size: 1.3em; }
+
+.reveal .slides section p,
+.reveal .slides section li { line-height: 1.35; }
+
+/* Listen */
+.reveal ul, .reveal ol { display: block; margin-left: 1.0em; margin-bottom: 0.3em; }
+.reveal li { margin-bottom: 0.3em; }
+.reveal li li { margin-bottom: 0.15em; }
+.reveal ul li::marker { color: var(--gf-blue); }
+
+.reveal strong { color: var(--gf-blue-dark); font-weight: 600; }
+
+/* Tabellen: linksbündig, nicht vertikal zentriert */
+.reveal table {
+  font-size: 0.72em;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 0.5em auto 0.5em 0 !important;
+}
+.reveal table th {
+  background: var(--gf-bg-soft);
+  color: var(--gf-blue-dark);
+  font-weight: 600;
+  padding: 0.5em 0.8em;
+  border: none;
+  border-bottom: 2px solid var(--gf-blue);
+  text-align: left;
+}
+.reveal table td {
+  padding: 0.4em 0.8em;
+  border: none;
+  border-bottom: 1px solid var(--gf-border);
+}
+
+/* Code */
+.reveal code {
+  font-family: 'JetBrains Mono', 'Fira Code', Menlo, monospace;
+  font-size: 0.9em;
+}
+.reveal pre {
+  font-size: 0.55em;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--gf-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin: 0.5em 0;
+}
+.reveal pre code {
+  line-height: 1.5;
+  padding: 0.8em 1em;
+  background: var(--gf-bg-code);
+  max-height: 520px;
+  /* Plugin setzt min-height: 100% auf pre code; zusammen mit dem Padding wächst
+     der Code-Block dann über sein <pre> hinaus und überlappt den Folgetext */
+  min-height: 0 !important;
+  box-sizing: border-box;
+}
+.reveal p code, .reveal li code, .reveal td code, .reveal th code, .reveal h2 code, .reveal blockquote code {
+  background: var(--gf-bg-soft);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: var(--gf-code);
+}
+/* Inline-Code nicht am Bindestrich umbrechen (`s->area()` wurde zu `s-` / `>area()`) */
+.reveal p code, .reveal li code { white-space: nowrap; }
+
+/* Blockquotes (Merksätze im Deck) */
+.reveal blockquote {
+  background: var(--gf-bg-code);
+  border-left: 4px solid var(--gf-violet);
+  border-radius: 0 8px 8px 0;
+  padding: 0.6em 1em;
+  margin: 0.6em 0;
+  font-style: italic;
+  color: #475569;
+  font-size: 0.85em;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: none;
+}
+.reveal blockquote p { margin: 0; }
+
+/* Callouts: Pastellkasten, Icon und Fettschrift des Plugins abräumen,
+   dann wie die Blockquotes des Quarto-Decks gestalten */
+.reveal .callout,
+.reveal .callout > .callout-title,
+.reveal .callout > .callout-content {
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.reveal .callout .callout-icon { display: none !important; }
+.reveal .callout > .callout-title { display: block !important; }
+.reveal .callout .callout-title-inner {
+  font-weight: 400 !important;
+  text-align: left !important;
+}
+.reveal .callout .callout-title-inner strong,
+.reveal .callout .callout-content strong { font-weight: 600; }
+
+.reveal .callout[data-type="note"],
+.reveal .callout[data-type="tip"],
+.reveal .callout[data-type="warning"],
+.reveal .callout[data-type="important"] {
+  position: relative !important;
+  background: var(--gf-bg-code) !important;
+  border-left: 4px solid var(--gf-blue) !important;
+  border-radius: 0 8px 8px 0 !important;
+  padding: 0.6em 1em !important;
+  margin: 0.6em 0 !important;
+  font-size: 0.9em;
+}
+.reveal .callout[data-type="warning"] { border-left-color: #db2777 !important; }
+.reveal .callout[data-type="tip"] { border-left-color: #16a34a !important; }
+.reveal .callout[data-type="important"] { border-left-color: var(--gf-violet) !important; }
+
+/* Slides Extended zentriert Folieninhalt vertikal im Flex-Wrapper;
+   wie im Quarto-Deck oben beginnen und Blöcke auf volle Breite strecken */
+.reveal .slides section div[absolute="true"] {
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+  padding-top: 0.4em;
+  text-align: left;
+}
+
+/* Divider und Titelfolie bleiben vertikal zentriert */
+.reveal .slides section[data-background-color] div[absolute="true"],
+.reveal .slides section.titleslide div[absolute="true"] {
+  justify-content: center !important;
+  text-align: center;
+}
+
+/* Zwei-Spalten-Layout im normalen Textfluss (ersetzt Quarto .columns) */
+.reveal .two-col { display: flex; gap: 1.5em; width: 100%; }
+.reveal .two-col > div { min-width: 0; }
+.reveal .two-col pre { margin-top: 0.3em; }
+
+/* Bilder */
+.reveal .slides section div[absolute="true"] img {
+  max-height: 440px;
+  object-fit: contain !important;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.reveal .slides section p { margin: 0.4em 0; }
+
+/* Foliennummer und Fortschritt */
+.reveal .slide-number {
+  background-color: transparent;
+  font-family: 'JetBrains Mono', Menlo, monospace;
+  color: var(--gf-light);
+  font-size: 0.5em;
+}
+.reveal .progress { height: 3px; }
+.reveal .progress span { background: linear-gradient(90deg, #2563eb, #7c3aed); }
+
+/* Syntax-Highlighting: das Plugin bündelt nur dunkle hljs-Themes (zenburn,
+   monokai, vs2015); `highlightTheme: github` liefert 404. Helle GitHub-Palette
+   daher direkt hier, passend zum Quarto-Deck. */
+.reveal .hljs { color: #24292e; background: var(--gf-bg-code); }
+.reveal .hljs-comment, .reveal .hljs-quote { color: #6a737d; font-style: italic; }
+.reveal .hljs-keyword, .reveal .hljs-selector-tag, .reveal .hljs-doctag,
+.reveal .hljs-meta .hljs-keyword, .reveal .hljs-template-tag { color: #d73a49; }
+.reveal .hljs-built_in, .reveal .hljs-type, .reveal .hljs-class .hljs-title,
+.reveal .hljs-title.class_ { color: #6f42c1; }
+.reveal .hljs-title, .reveal .hljs-title.function_, .reveal .hljs-function .hljs-title { color: #6f42c1; }
+.reveal .hljs-string, .reveal .hljs-regexp, .reveal .hljs-meta .hljs-string { color: #032f62; }
+.reveal .hljs-number, .reveal .hljs-literal, .reveal .hljs-symbol { color: #005cc5; }
+.reveal .hljs-variable, .reveal .hljs-template-variable, .reveal .hljs-attr,
+.reveal .hljs-attribute, .reveal .hljs-params { color: #24292e; }
+.reveal .hljs-meta { color: #22863a; }
+.reveal .hljs-operator, .reveal .hljs-punctuation { color: #24292e; }
+.reveal .hljs-emphasis { font-style: italic; }
+.reveal .hljs-strong { font-weight: 600; }
+
+/* --- Ergänzungen für das Python/ML-Deck --- */
+
+/* JetBrains Mono zieht >=, !=, ->, == zu Sonderzeichen zusammen. Wer Python lernt,
+   muss die getippten Zeichen sehen: Ligaturen aus. */
+.reveal code, .reveal pre, .reveal pre code {
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+}
+
+/* Kompakte Folien: Text kleiner, Code aber lesbar halten (ca. 17 px statt 14 px) */
+.reveal pre { font-size: 0.60em; }
+.reveal .slides section.smaller pre { font-size: 0.72em; }
+
+/* Luft zwischen Codeblock und folgender Liste */
+.reveal pre + ul, .reveal pre + ol, .reveal pre + p { margin-top: 0.6em; }
+
+/* Bilder dürfen höher werden */
+.reveal .slides section div[absolute="true"] img { max-height: 460px; }
+/* Bild plus Stichpunkte auf einer Folie: Bild niedriger halten, damit nichts unten überläuft */
+.reveal .slides section:has(ul) div[absolute="true"] img,
+.reveal .slides section:has(ul) img { max-height: 300px; }
+
+/* ===== Design Seminarblau (gewählt am 19.09.2026), überschreibt die Basis oben ===== */
+:root { --gf-text:#24364d; --gf-heading:#183b66; --gf-blue:#2459a6; --gf-blue-dark:#183b66; --gf-code:#2459a6; --gf-violet:#2459a6;
+  --gf-muted:#5a6b82; --gf-light:#8593a8; --gf-bg-soft:#e8f0fb; --gf-bg-code:#ffffff; --gf-border:#b9c6d8; }
+.reveal, .reveal-viewport, body { background:#f4f7fb !important; }
+.reveal { font-family:'Geist',system-ui,sans-serif; }
+.reveal pre code, .reveal code { font-family:'Geist Mono',ui-monospace,monospace; }
+.reveal h1, .reveal h2, .reveal h3 { font-family:'Instrument Serif',serif; font-weight:400; letter-spacing:-0.005em; }
+.reveal .slides section h2 { border-bottom:none; padding-bottom:0; margin-bottom:0.35em; font-size:1.5em; line-height:1.1; }
+.reveal .slides section.smaller h2 { font-size:1.5em; }
+.reveal .slides section h3 { font-size:1.25em; }
+.reveal h2 code, .reveal h3 code { font-size:0.78em; }
+.reveal .slides section h2::after { content:""; display:block; width:72px; height:4px; background:var(--gf-blue); margin-top:0.25em; border-radius:2px; }
+.reveal .slides section.titleslide h1 { font-family:'Instrument Serif',serif; font-weight:400; font-size:2.9em; background:none; -webkit-text-fill-color:#183b66; color:#183b66; letter-spacing:-0.02em; }
+.reveal .slides section.titleslide h3 { color:#2459a6; font-weight:400; }
+.reveal .slides section[data-background-color] h1 { font-family:'Instrument Serif',serif; font-weight:400; font-size:2.6em; text-shadow:none; }
+.reveal pre { box-shadow:none; border:1px solid #b9c6d8; border-radius:8px; }
+.reveal table th { background:#e8f0fb; border-bottom:2px solid #183b66; }
+.reveal .callout[data-type="warning"] { border-left-color:#b45309 !important; }
+.reveal .callout[data-type="tip"] { border-left-color:#2459a6 !important; }
+.reveal .slides section div[absolute="true"] img { box-shadow:none !important; border-radius:8px; }
+
+/* Titel poliert: Haarlinie über die ganze Breite, Akzentstück links darauf, Code im Titel ohne Kasten */
+.reveal .slides section h2 { position:relative; padding-bottom:0.28em; margin-bottom:0.5em; border-bottom:1px solid #b9c6d8; color:#183b66; }
+.reveal .slides section h2::after { content:""; position:absolute; left:0; bottom:-2px; width:96px; height:3px; margin:0; background:#2459a6; border-radius:0; }
+.reveal .slides section[data-background-color] h1, .reveal .slides section[data-background-color] h2 { border-bottom:none; }
+.reveal .slides section[data-background-color] h2::after { display:none; }
+.reveal h2 code, .reveal h3 code { background:transparent !important; padding:0 !important; color:#2459a6; font-size:0.74em; }
+
+/* Fließtext: Source Serif 4 (seriöser als die Groteske), Titel überall gleich groß, auch auf kompakten Folien */
+.reveal { font-family:'Source Serif 4',Georgia,serif; font-size:33px; }
+.reveal strong { font-weight:600; }
+.reveal .slides section h2 { font-size:1.6em; }
+.reveal .slides section.smaller h2 { font-size:2.13em; }
+.reveal table, .reveal .callout, .reveal blockquote { font-family:inherit; }
+.reveal blockquote { font-style:normal; }
+

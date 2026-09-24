@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 464" role="img" aria-labelledby="d_t4_review_pipeline-title d_t4_review_pipeline-desc">
+  <title id="d_t4_review_pipeline-title">Code-Review-Pipeline: Rollen und Datenfluss</title>
+  <desc id="d_t4_review_pipeline-desc">Ein Pull Request löst die Pipeline aus: der Kontext-Sammler holt Diff und Dateien über MCP, drei Reviewer prüfen parallel Korrektheit, Sicherheit und Stil, der Lead Reviewer führt zusammen, ein Mensch gibt frei, dann wird der Kommentar auf GitHub gepostet.</desc>
+  <defs><style>@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap');</style>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5a6b82"/></marker>
+    <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2459a6"/></marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#f4f7fb"/>
+  <line x1="200" y1="240" x2="256" y2="240" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="456" y1="240" x2="520" y2="240" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <path d="M456,224 H488 Q496,224 496,216 V120 Q496,112 504,112 H520" fill="none" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <path d="M456,256 H488 Q496,256 496,264 V360 Q496,368 504,368 H520" fill="none" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="752" y1="240" x2="792" y2="240" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <path d="M752,112 H768 Q776,112 776,120 V216 Q776,224 784,224 H792" fill="none" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <path d="M752,368 H768 Q776,368 776,360 V264 Q776,256 784,256 H792" fill="none" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="968" y1="240" x2="992" y2="240" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="1080" y1="272" x2="1080" y2="336" stroke="#2459a6" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
+  <rect x="1092" y="294" width="94.5" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="1092" y="306" font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.06em" fill="#2459a6" text-anchor="start">FREIGEGEBEN</text>
+  <rect x="40" y="208" width="160" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="40" y="208" width="160" height="64" rx="6" fill="rgba(90,107,130,0.10)" stroke="#8593a8" stroke-width="1"/>
+  <text x="120" y="236" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Pull Request</text>
+  <text x="120" y="258" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Ereignis: geöffnet</text>
+  <rect x="256" y="208" width="200" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="256" y="208" width="200" height="64" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="356" y="236" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Kontext-Sammler</text>
+  <text x="356" y="258" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">MCP: Diff, Dateien</text>
+  <rect x="520" y="80" width="232" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="520" y="80" width="232" height="64" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="636" y="108" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Reviewer Korrektheit</text>
+  <text x="636" y="130" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Findings: Datei, Zeile</text>
+  <rect x="520" y="208" width="232" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="520" y="208" width="232" height="64" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="636" y="236" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Reviewer Sicherheit</text>
+  <text x="636" y="258" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Findings: Datei, Zeile</text>
+  <rect x="520" y="336" width="232" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="520" y="336" width="232" height="64" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="636" y="364" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Reviewer Stil und Tests</text>
+  <text x="636" y="386" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Findings: Datei, Zeile</text>
+  <rect x="792" y="208" width="176" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="792" y="208" width="176" height="64" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="880" y="236" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Lead Reviewer</text>
+  <text x="880" y="258" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">zusammenführen</text>
+  <rect x="992" y="208" width="176" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="992" y="208" width="176" height="64" rx="6" fill="rgba(36,89,166,0.08)" stroke="#2459a6" stroke-width="1"/>
+  <text x="1080" y="236" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Freigabe</text>
+  <text x="1080" y="258" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Mensch entscheidet</text>
+  <rect x="992" y="336" width="176" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="992" y="336" width="176" height="64" rx="6" fill="rgba(24,59,102,0.03)" stroke="rgba(24,59,102,0.30)" stroke-width="1"/>
+  <text x="1080" y="364" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Review-Kommentar</text>
+  <text x="1080" y="386" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">GitHub API</text>
+  <text x="636" y="440" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Die drei Reviewer laufen parallel; der Diff ist für sie Daten, keine Anweisung</text>
+</svg>

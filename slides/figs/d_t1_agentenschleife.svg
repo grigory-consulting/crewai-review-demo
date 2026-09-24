@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="d_t1_agentenschleife-title d_t1_agentenschleife-desc">
+  <title id="d_t1_agentenschleife-title">Agentenschleife: Modell, Werkzeuge, Beobachtung</title>
+  <desc id="d_t1_agentenschleife-desc">Ein Agent ist ein Modell in einer Schleife: Es wählt eine Aktion, ein Werkzeug führt sie aus, die Beobachtung geht zurück ins Modell, bis eine Antwort steht; der Verlauf liegt im Gedächtnis.</desc>
+  <defs><style>@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap');</style>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5a6b82"/></marker>
+    <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2459a6"/></marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#f4f7fb"/>
+  <line x1="200" y1="200" x2="320" y2="200" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <rect x="227.75" y="174" width="64.5" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="260" y="186" font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.06em" fill="#5a6b82" text-anchor="middle">AUFGABE</text>
+  <line x1="560" y1="184" x2="800" y2="184" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <rect x="602.75" y="158" width="154.5" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="680" y="170" font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.06em" fill="#5a6b82" text-anchor="middle">AKTION: JSON-AUFRUF</text>
+  <line x1="800" y1="216" x2="560" y2="216" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <rect x="632.75" y="226" width="94.5" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="680" y="238" font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.06em" fill="#5a6b82" text-anchor="middle">BEOBACHTUNG</text>
+  <line x1="440" y1="168" x2="440" y2="88" stroke="#5a6b82" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <rect x="456" y="118" width="199.5" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="456" y="130" font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.06em" fill="#5a6b82" text-anchor="start">FERTIG: KEINE AKTION MEHR</text>
+  <line x1="420" y1="232" x2="420" y2="320" stroke="#5a6b82" stroke-dasharray="5,4" stroke-width="1" marker-end="url(#arrow)"/>
+  <rect x="336" y="266" width="72" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="408" y="278" font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.06em" fill="#5a6b82" text-anchor="end">SCHREIBT</text>
+  <line x1="460" y1="320" x2="460" y2="232" stroke="#5a6b82" stroke-dasharray="5,4" stroke-width="1" marker-end="url(#arrow)"/>
+  <rect x="472" y="266" width="49.5" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="472" y="278" font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.06em" fill="#5a6b82" text-anchor="start">LIEST</text>
+  <rect x="40" y="168" width="160" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="40" y="168" width="160" height="64" rx="6" fill="rgba(90,107,130,0.10)" stroke="#8593a8" stroke-width="1"/>
+  <text x="120" y="196" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Nutzer</text>
+  <text x="120" y="218" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Auftrag, Frage</text>
+  <rect x="320" y="168" width="240" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="320" y="168" width="240" height="64" rx="6" fill="rgba(36,89,166,0.08)" stroke="#2459a6" stroke-width="1"/>
+  <text x="440" y="196" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Modell (LLM)</text>
+  <text x="440" y="218" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Gedanke und nächste Aktion</text>
+  <rect x="800" y="168" width="240" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="800" y="168" width="240" height="64" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="920" y="196" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Werkzeuge</text>
+  <text x="920" y="218" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Funktionen, MCP-Server</text>
+  <rect x="320" y="32" width="240" height="56" rx="6" fill="#f4f7fb"/>
+  <rect x="320" y="32" width="240" height="56" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="440" y="67" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Antwort</text>
+  <rect x="280" y="320" width="320" height="56" rx="6" fill="#f4f7fb"/>
+  <rect x="280" y="320" width="320" height="56" rx="6" fill="rgba(24,59,102,0.05)" stroke="#5a6b82" stroke-width="1"/>
+  <text x="440" y="344" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">Gedächtnis</text>
+  <text x="440" y="366" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Verlauf: Aktionen, Beobachtungen</text>
+  <text x="920" y="296" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Schleife läuft, bis das Modell keine</text>
+  <text x="920" y="318" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">Aktion mehr wählt oder max. Schritte</text>
+</svg>
