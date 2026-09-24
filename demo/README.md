@@ -9,5 +9,6 @@ Kleines Beispielpaket für das Seminar: Warenkorb mit Preislogik.
 ## Fachliche Regeln
 
 - Alle Beträge werden kaufmännisch auf zwei Nachkommastellen gerundet.
-- Geplante Rabattstaffel (noch nicht umgesetzt): ab 100 Euro 5 %, ab 500 Euro 10 %,
+- Rabattstaffel (`staffel_rabatt`, automatisch über `Warenkorb.gesamtsumme_mit_staffel`):
+  ab 100 Euro 5 %, ab 500 Euro 10 %,
   ab 1000 Euro 15 %. "Ab" schließt die Grenze ein: 100,00 Euro erhalten bereits 5 %.
