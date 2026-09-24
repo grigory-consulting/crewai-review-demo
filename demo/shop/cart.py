@@ -1,7 +1,7 @@
 """Warenkorb mit Positionen, Zwischensumme und Gesamtsumme."""
 from dataclasses import dataclass, field
 
-from shop.pricing import rabatt_anwenden, runde_betrag
+from shop.pricing import rabatt_anwenden, runde_betrag, staffel_rabatt
 
 
 @dataclass
@@ -29,3 +29,7 @@ class Warenkorb:
     def gesamtsumme(self, rabatt_prozent: float = 0.0) -> float:
         """Zwischensumme abzüglich eines manuell vergebenen Rabatts."""
         return rabatt_anwenden(self.zwischensumme(), rabatt_prozent)
+
+    def gesamtsumme_mit_staffel(self) -> float:
+        """Zwischensumme abzüglich des automatischen Staffelrabatts."""
+        return staffel_rabatt(self.zwischensumme())

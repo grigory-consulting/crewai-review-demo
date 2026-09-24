@@ -19,3 +19,20 @@ def rabatt_anwenden(betrag: float, prozent: float) -> float:
     if not 0 <= prozent <= 100:
         raise ValueError("Rabatt muss zwischen 0 und 100 Prozent liegen")
     return runde_betrag(betrag * (1 - prozent / 100))
+
+
+# Rabattstaffel: (Mindestbetrag in Euro, Rabatt in Prozent), absteigend sortiert.
+STAFFEL = [(1000, 15), (500, 10), (100, 5)]
+
+
+def staffel_prozent(betrag: float) -> float:
+    """Liefert den Rabattsatz laut Staffel (siehe README: ab 100/500/1000 Euro)."""
+    for grenze, prozent in STAFFEL:
+        if betrag > grenze:
+            return prozent
+    return 0.0
+
+
+def staffel_rabatt(betrag: float) -> float:
+    """Wendet die Rabattstaffel an und liefert den reduzierten Betrag."""
+    return betrag - betrag * staffel_prozent(betrag) / 100
