@@ -866,7 +866,7 @@ Was die Pipeline aus Teil 4 im Alltag leistet, was sie kostet, wo sie täuscht u
 
 ## Betriebsregeln
 
-+ **Evaluationsset:** zwanzig bis fünfzig alte PRs mit den echten menschlichen Review-Kommentaren; jede Prompt- oder Modelländerung läuft dagegen <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Evaluationsset:** rund hundert alte PRs mit den echten Review-Kommentaren, darunter je 30 bis 50 mit und ohne bestätigte Befunde; jede Prompt- oder Modelländerung läuft dagegen <!-- .element: class="fragment" data-fragment-index="1" -->
 + **Findings messen:** Precision (Anteil der Findings, die ein Mensch bestätigt) und Abdeckung der menschlichen Findings; beides je Kategorie <!-- .element: class="fragment" data-fragment-index="2" -->
 + **Mensch bleibt Freigeber:** kein Approve aus der Pipeline, das Gate ist kein Provisorium <!-- .element: class="fragment" data-fragment-index="3" -->
 + **Drift beobachten:** Modellwechsel, neue Modellversion oder geänderte Prompts verändern die Werte; Evaluationsset erneut laufen lassen, bevor die Änderung live geht <!-- .element: class="fragment" data-fragment-index="4" -->
@@ -913,7 +913,9 @@ Was die Pipeline aus Teil 4 im Alltag leistet, was sie kostet, wo sie täuscht u
 + Tao et al.: MAGIS: LLM-Based Multi-Agent Framework for GitHub Issue Resolution, arXiv 2403.17927 <!-- .element: class="fragment" data-fragment-index="5" -->
 + Belcak et al.: Small Language Models are the Future of Agentic AI, NVIDIA Research 2025 <!-- .element: class="fragment" data-fragment-index="6" -->
 + Stoica: The Limits of AI Coding Agents, Berkeley RDI 2026 <!-- .element: class="fragment" data-fragment-index="7" -->
-+ GitHub MCP Server: github.com/github/github-mcp-server <!-- .element: class="fragment" data-fragment-index="8" -->
++ Alexopoulos et al.: Prompt-Injection gegen automatisierte Code-Reviews, arXiv 2603.18740; OWASP Top 10 for LLM Applications, LLM01 <!-- .element: class="fragment" data-fragment-index="8" -->
++ Anthropic: How we built our multi-agent research system (2025); Husain und Shankar: Evals FAQ (hamel.dev) <!-- .element: class="fragment" data-fragment-index="9" -->
++ GitHub: REST API Pull request reviews, Actions permissions und environments (docs.github.com); GitHub MCP Server <!-- .element: class="fragment" data-fragment-index="10" -->
 
 --
 
